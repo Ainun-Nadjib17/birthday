@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Birthday Surprise</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+</head>
+<body>
+  <div class="scene">
+    <h1 class="title">Birthday Surprise</h1>
+
+    <!-- Busur & Panah (Dibuat lebih mirip video) -->
+    <div class="bow-wrapper" id="bowWrapper">
+      <svg class="bow-svg" viewBox="0 0 100 120">
+        <!-- Lengkungan Busur -->
+        <path d="M 80 10 Q 10 60 80 110" fill="none" stroke="#e0e0e0" stroke-width="4" stroke-linecap="round"/>
+        <!-- Tali Busur -->
+        <line x1="80" y1="10" x2="80" y2="110" stroke="#fff" stroke-width="1.5" opacity="0.7"/>
+      </svg>
+      <!-- Panah -->
+      <div class="arrow" id="arrow">
+        <div class="arrow-shaft"></div>
+        <div class="arrow-head"></div>
+      </div>
+    </div>
+
+    <!-- Hati Target -->
+    <div class="heart" id="heart">💖</div>
+
+    <!-- Ledakan Hati Kecil -->
+    <div class="hearts-explosion" id="heartsExplosion"></div>
+
+    <!-- Kue Ulang Tahun -->
+    <div class="cake" id="cake">
+      <div class="candle"><div class="flame"></div></div>
+      <div class="layer top"></div>
+      <div class="layer middle"></div>
+      <div class="layer bottom"></div>
+      <div class="plate"></div>
+    </div>
+
+    <!-- Balon -->
+    <div class="balloons" id="balloons"></div>
+
+    <!-- Teks Happy Birthday -->
+    <div class="happy-text" id="happyText">
+      <span class="word">Happy</span>
+      <span class="word">Birthday</span>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

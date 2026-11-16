@@ -1,0 +1,154 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: #1a0a2e;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  font-family: 'Georgia', serif;
+}
+
+.scene {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(ellipse at center, #2d1b4e 0%, #1a0a2e 70%);
+}
+
+.title {
+  position: absolute;
+  top: 30px;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-size: 1.8rem;
+  font-family: 'Arial', sans-serif;
+  letter-spacing: 2px;
+  z-index: 100;
+}
+
+/* ===== BUSUR & PANAH (FIXED) ===== */
+.bow-wrapper {
+  position: absolute;
+  left: 8%;
+  top: 55%;
+  transform: translateY(-50%);
+  width: 100px;
+  height: 120px;
+  z-index: 10;
+}
+
+.bow-svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 0 5px rgba(255,255,255,0.5));
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  transform: translateY(-50%);
+  width: 70px;
+  height: 4px;
+}
+
+.arrow-shaft {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  border-radius: 2px;
+  box-shadow: 0 0 5px rgba(255,255,255,0.8);
+}
+
+.arrow-head {
+  position: absolute;
+  right: -12px;
+  top: -6px;
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 15px solid #fff;
+  filter: drop-shadow(0 0 5px rgba(255,255,255,0.8));
+}
+
+/* ===== HATI TARGET ===== */
+.heart {
+  position: absolute;
+  top: 40%;
+  left: 55%;
+  font-size: 5rem;
+  filter: drop-shadow(0 0 20px #ff69b4);
+  z-index: 5;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+/* ===== HATI KECIL (EXPLOSION) ===== */
+.hearts-explosion {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 4;
+}
+
+.floating-heart {
+  position: absolute;
+  font-size: 1.5rem;
+  opacity: 0;
+}
+
+/* ===== KUE ===== */
+.cake {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  z-index: 8;
+}
+
+.layer { margin: 0 auto; border-radius: 10px; position: relative; }
+.layer.bottom { width: 200px; height: 60px; background: linear-gradient(180deg, #ff9ec7, #e91e8c); border-radius: 10px 10px 20px 20px; }
+.layer.middle { width: 150px; height: 50px; background: linear-gradient(180deg, #ffb6d9, #f06292); border-radius: 10px 10px 15px 15px; margin-bottom: -5px; }
+.layer.top { width: 100px; height: 40px; background: linear-gradient(180deg, #ffd1e8, #ec407a); border-radius: 10px 10px 12px 12px; margin-bottom: -5px; }
+
+.plate { width: 240px; height: 15px; background: linear-gradient(180deg, #d4af37, #b8860b); border-radius: 50%; margin: 0 auto; margin-top: -5px; }
+
+.candle { width: 8px; height: 25px; background: linear-gradient(180deg, #fff, #f5f5f5); margin: 0 auto; position: relative; border-radius: 2px; }
+.flame {
+  position: absolute; top: -15px; left: 50%; transform: translateX(-50%);
+  width: 10px; height: 15px; background: radial-gradient(ellipse, #ffeb3b, #ff9800, #ff5722);
+  border-radius: 50% 50% 20% 20%; animation: flicker 0.3s infinite alternate;
+}
+@keyframes flicker { 0% { transform: translateX(-50%) scale(1); opacity: 1; } 100% { transform: translateX(-50%) scale(1.2); opacity: 0.8; } }
+
+/* ===== BALON ===== */
+.balloons { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 3; }
+.balloon {
+  position: absolute; bottom: -100px; width: 40px; height: 50px;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; opacity: 0;
+}
+.balloon::after {
+  content: ''; position: absolute; bottom: -30px; left: 50%; transform: translateX(-50%);
+  width: 1px; height: 30px; background: #fff;
+}
+
+/* ===== TEKS HAPPY BIRTHDAY ===== */
+.happy-text {
+  position: absolute; top: 30%; left: 50%; transform: translate(-50%, -50%);
+  z-index: 20; opacity: 0; display: flex; gap: 20px;
+}
+.happy-text .word {
+  font-size: 4rem; font-style: italic;
+  background: linear-gradient(180deg, #fff 0%, #ffd700 50%, #fff 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
+}
